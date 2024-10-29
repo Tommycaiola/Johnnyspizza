@@ -1,0 +1,205 @@
+/* Stili di base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #ffffff;
+    color: #000000ed;
+    overflow-x: hidden;
+}
+
+/* Video di sfondo globale */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+/* Contenitore per il video introduttivo */
+.intro-video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.intro-video video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Stile della navigazione */
+nav {
+    background-color: #008cff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Sezioni principali */
+section {
+    padding: 20px;
+    background-color: transparent; /* Rimuove lo sfondo della sezione */
+    color: rgb(0, 0, 0);
+}
+
+
+
+/* Stile del footer */
+footer {
+    background-color: #008cff;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    margin-top: auto;
+}
+
+/* Rimozione padding/margini tra immagini e contenuti */
+.images-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Spaziatura normale per immagini gallery */
+}
+
+.images-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Dimensione limitata per immagini del menu */
+.menu-category {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.menu-category img {
+    width: calc(33.333% - 20px); /* Larghezza responsiva */
+    max-width: 300px; /* Limite massimo per evitare immagini troppo grandi */
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Modifiche per le immagini delle birre */
+.birre-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.birre-section img {
+    width: calc(33.333% - 20px); /* Larghezza responsiva per le immagini delle birre */
+    max-width: 300px; /* Limite massimo per evitare immagini troppo grandi */
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Stile dell'iframe */
+iframe {
+    border: 0;
+    width: 100%;
+    height: 400px;
+    display: block;
+}
+
+/* Stile delle sezioni */
+.location-section,
+.locale-section,
+.menu-section,
+.spiaggia-section,
+.birre-section {
+    background-color: transparent; /* Rimuove lo sfondo della sezione */
+    margin: 0;
+    padding: 0;
+    background-attachment: fixed; /* Fissa gli sfondi per evitare spostamenti */
+}
+
+
+
+.prev,
+.next {
+    background-color: rgba(0, 0, 0, 0.5); /* Sfondo trasparente per i pulsanti */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    z-index: 1; /* Assicurati che i pulsanti siano sopra le slide */
+    margin: 0 10px; /* Aggiungi un margine per separare i pulsanti dalle slide */
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Cambia sfondo al passaggio del mouse */
+}
+
+/* Stile dei link */
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(255, 251, 251);
+    text-decoration: underline;
+}
+
+/* Media Queries per dispositivi mobili */
+@media (max-width: 768px) {
+    .images-gallery,
+    .menu-category {
+        flex-direction: column;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

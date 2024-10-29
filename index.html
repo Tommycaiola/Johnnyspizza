@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Johnny's Pizza - Mongiove, Patti (ME)</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Consolidamento del CSS */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #000000ed; 
+        }
+
+        nav {
+            background-color: #008cff; /* Arancione */
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .location-section, .locale-section, .menu-section, .spiaggia-section, .birre-section {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 20px;
+            color: rgb(255, 255, 255);
+            min-height: 100vh; /* Imposta un'altezza minima per la sezione */
+        }
+
+        .location-section { 
+            background-image: url('videos/sfondo.png'); 
+            height: 100;
+            width: 100 ;
+        }
+
+        .locale-section {
+            background-image: url('images/sfondo.png'); 
+        }
+
+        .menu-section {
+            background-image: url('images/sfondo.png'); 
+        }
+
+        .spiaggia-section {
+            background-image: url('images/sfondo.png');  
+        }
+
+        .birre-section {
+            background-color: transparent; /* Colore di sfondo per la sezione birre */
+            padding: 20px;
+            color: rgb(0, 0, 0,);
+        
+        }
+
+        .images-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .images-gallery img {
+            width: calc(33.333% - 20px);
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .menu-category img, .birra-slide img {
+            width: 100%; /* Rende l'immagine responsiva */
+            height: auto;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #008cff; /* Arancione */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+   
+        .carosello-container {
+    position: relative;
+    overflow: hidden; /* Nasconde le immagini fuori dall'area visibile */
+    width: 100%; /* Si adatta alla larghezza del contenitore */
+}
+
+.carosello-slides {
+    display: flex;
+    transition: transform 0.5s ease; /* Animazione fluida nello spostamento */
+    width: 100%; /* Necessario per far sì che il contenuto prenda l'intera larghezza */
+}
+
+.birra-slide {
+    min-width: 100%; /* Ogni slide occupa il 100% della larghezza visibile */
+    flex-shrink: 0; /* Evita che le slide si riducano */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.birre-slide img {
+    min-width: 100%; /* Ogni immagine occupa il 100% della larghezza del contenitore */
+    scroll-snap-align: center; /* Allinea ogni immagine al centro durante lo snap */
+    object-fit: cover; /* Adatta l'immagine per riempire lo spazio */
+    border-radius: 10px; /* Mantiene l'arrotondamento degli angoli */
+}
+
+
+
+
+
+        
+        /* Pulsanti di navigazione */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 50%;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
+    
+    <video autoplay muted loop id="bg-video">
+        <source src="videos/sfondoblubianco-2_DfsNUSRq.mp4" type="video/mp4">
+        Il tuo browser non supporta il video HTML5.
+    </video> 
+    <div class="intro-video">
+        <video autoplay muted loop id="logo-video">
+            <source src="videos/Johnny’s Pizza.mp4" type="video/mp4">
+            Il tuo browser non supporta il video HTML5.
+        </video>
+    </div>
+
+<nav>
+    <a href="#menu">Menù</a>
+    <a href="#spiaggia">Spiaggia</a>
+    <a href="#location">Dove siamo</a>
+    <a href="#locale">Il nostro locale</a>
+</nav>
+
+<section id="location" class="location-section">
+    <h2>Dove Siamo</h2>
+    <p>Ci troviamo a Mongiove, una splendida frazione di Patti, in provincia di Messina. Vieni a trovarci e scopri le deliziose pizze e piatti del nostro ristorante.</p>
+    <p>Indirizzo: Via Messina, 3, 98066 Mongiove ME</p>
+    <iframe
+    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2957.8743124942125!2d15.011617711238529!3d38.14868797177634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDA4JzU1LjMiTiAxNcKwMDAnNTEuMSJF!5e1!3m2!1sit!2sit!4v1728991056784!5m2!1sit!2sit&markers=38.14868797177634,15.011617711238529" 
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</section>
+
+<section id="locale" class="locale-section">
+    <h2>Il nostro locale</h2>
+    <p>Goditi una cena in riva al mare, ecco alcune foto!</p>
+    <div class="images-gallery">
+        <img src="images/spiaggia.jpg" alt="Spiaggia">
+    </div>
+</section>
+
+<section id="menu" class="menu-section">
+    <h2>Il nostro menù</h2>
+    <p>Scopri il nostro menù ricco di pizze, piatti tipici e specialità di mare.</p>
+    <iframe allowfullscreen="allowfullscreen" scrolling="no" class="fp-iframe" src="https://heyzine.com/flip-book/9f343c4329.html" style="border: 1px solid lightgray; width: 100%; height: 400px;"></iframe>
+</section>
+
+    
+    
+</section>
+
+
+<!-- Nuova sezione Birre -->
+<section id="birre" class="birre-section">
+    <h2>Le Nostre Birre</h2>
+    <p>Scopri la nostra selezione di birre locali e classiche.</p>
+    <div class="carosello-container">
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <div class="carosello-slides">
+            <div class="birra-slide">
+                <img src="images/birradellostretto-Photoroom.png" alt="Birra Chiara">
+                <p>Dello Stretto</p>
+            </div>
+            <div class="birra-slide">
+                <img src="images/birramessina-Photoroom.png" alt="Birra Rossa">
+                <p>Messina</p>
+            </div>
+            <div class="birra-slide">
+                <img src="images/birracristallidisale-Photoroom.png" alt="Birra Scura">
+                <p>Messina cristalli di sale</p>
+            </div>
+            <div class="birra-slide">
+                <img src="images/birraheineken.png" alt="Birra Scura">
+                <p>Heineken</p>
+            </div>
+            <div class="birra-slide">
+                <img src="images/birrasemedorato-Photoroom.png" alt="Birra Scura">
+                <p>Semedorato</p>
+            </div>
+            <!-- Aggiungi altre birre qui -->
+        </div>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+</section>
+
+
+
+<section id="spiaggia" class="spiaggia-section">
+    <h2>La nostra spiaggia</h2>
+    <p>Dopo una deliziosa cena, goditi una passeggiata sulla nostra spiaggia privata a pochi passi dal ristorante. Un luogo perfetto per rilassarsi con vista sul mare.</p>
+    <p>Offriamo anche i seguenti servizi:</p>
+    <ul>
+        <li><a href="noleggio-lettini.html">Noleggio Lettini</a></li>
+        <li><a href="escursioni-barca.html">Escursioni in Barca</a></li>
+    </ul>
+    <img src="images/mongiove-3-1024x574.jpg" alt="Spiaggia di Mongiove">
+</section>
+
+<footer>
+    <p>&copy; 2024 Johnny's Pizza. Tutti i diritti riservati.</p>
+</footer>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.birra-slide');
+const totalSlides = slides.length;
+
+function showSlide(index) {
+    if (index >= totalSlides) {
+        currentSlide = 0; // Torna alla prima slide
+    } else if (index < 0) {
+        currentSlide = totalSlides - 1; // Torna all'ultima slide
+    } else {
+        currentSlide = index;
+    }
+
+    // Calcola il trasloco per mostrare una sola slide alla volta
+    const slideWidth = -currentSlide * 100;
+    document.querySelector('.carosello-slides').style.transform = `translateX(${slideWidth}%)`;
+}
+
+function changeSlide(direction) {
+    showSlide(currentSlide + direction);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    showSlide(currentSlide);
+});
+
+
+</script>
+
+
+</body>
+</html>
